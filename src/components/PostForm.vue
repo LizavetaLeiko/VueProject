@@ -2,54 +2,43 @@
   <div>
     <form @submit.prevent>
       <h4 class="form_title">Создайте пост</h4>
-      <input v-model="post.title" class="input" type="text" placeholder="Название">
-      <input v-model="post.content" class="input" type="text" placeholder="Описание">
-      <button class="form_btn" @click='createPost'>Создать</button>
+      <TextInput v-model="post.title" type="text" placeholder="Название"/>
+      <TextInput v-model="post.content" type="text" placeholder="Описание"/>
+      <DefaultBtn @click="createPost" style="align-self: flex-end;">Создать</DefaultBtn>
     </form>
   </div>
 </template>
 
 <script>
+import DefaultBtn from './ui/DefaultBtn.vue'
+
 export default {
-  data(){
-    return{
-      post: {
-        title: '', 
-        content: '',
-      },
-    }
-  },
-  methods:{
-    createPost(){
-      this.post.id = Date.now()
-      this.$emit('create', this.post)
-      this.post = {
-        title: '',
-        content: ''
-      }
+    data() {
+        return {
+            post: {
+                title: "",
+                content: "",
+            },
+        };
     },
-  }
+    methods: {
+        createPost() {
+            this.post.id = Date.now();
+            this.$emit("create", this.post);
+            this.post = {
+                title: "",
+                content: ""
+            };
+        },
+    },
+    components: { DefaultBtn }
 }
 </script>
 
 <style scoped>
-.input{
-  padding: 15px;
-  border: 1px blue solid;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
 .form_title{
   font-size: 28px;
   margin: 10px 0 15px;
-}
-
-.form_btn{
-  padding: 10px 20px;
-  background-color: blue;
-  color: white;
-  border: none;
 }
 
 form{
