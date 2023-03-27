@@ -22,7 +22,7 @@
   padding: 15px;
   border: 1px blue solid;
   margin-bottom: 10px;
-  width: 100%;
+  width: 93%;
 }
 
 </style>

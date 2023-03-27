@@ -1,11 +1,12 @@
 <template>
   <div class="post"> 
     <div>
+      <div>{{ post.id }}</div>
       <div><strong>Название поста:</strong> {{post.title}}</div>
-      <div><strong>Контент:</strong> {{ post.content }}</div>
+      <div><strong>Контент:</strong> {{ post.body }}</div>
     </div>
     <div class="post__btns">
-      <DefaultBtn>Удалить</DefaultBtn>
+      <DefaultBtn @click="$emit('remove', post)">Удалить</DefaultBtn>
     </div>
   </div>
 </template>

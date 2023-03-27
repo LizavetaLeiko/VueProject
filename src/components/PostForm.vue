@@ -17,7 +17,7 @@ export default {
         return {
             post: {
                 title: "",
-                content: "",
+                body: "",
             },
         };
     },
@@ -27,7 +27,7 @@ export default {
             this.$emit("create", this.post);
             this.post = {
                 title: "",
-                content: ""
+                body: ""
             };
         },
     },
