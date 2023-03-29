@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import components from '@/components/ui/index'
 import App from './App.vue'
+import router from './router/router'
+import directives from '@/directives'
+import store from './store'
 
 const app = createApp(App)
 
@@ -8,4 +11,8 @@ components.forEach(item =>{
   app.component(item.name, item)
 })
 
-app.mount('#app')
+directives.forEach( item =>{
+  app.directive(item.name, item)
+})
+
+app.use(router).use(store).mount('#app')

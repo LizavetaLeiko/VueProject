@@ -6,13 +6,13 @@
       <div><strong>Контент:</strong> {{ post.body }}</div>
     </div>
     <div class="post__btns">
+      <DefaultBtn @click="$router.push(`/post/${post.id}`)">Открыть</DefaultBtn>
       <DefaultBtn @click="$emit('remove', post)">Удалить</DefaultBtn>
     </div>
   </div>
 </template>
 
 <script>
-import DefaultBtn from './ui/DefaultBtn.vue'
   export default {
     props:{
       post:{
@@ -20,9 +20,6 @@ import DefaultBtn from './ui/DefaultBtn.vue'
         required: true,
       },
     },
-    components:{
-      DefaultBtn
-    }
   }
 </script>
 
@@ -35,5 +32,10 @@ import DefaultBtn from './ui/DefaultBtn.vue'
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
+}
+.post__btns{
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
 }
 </style>

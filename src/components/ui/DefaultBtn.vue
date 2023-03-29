@@ -17,5 +17,6 @@
   background-color: blue;
   color: white;
   border: none;
+  cursor: pointer;
 }
 </style>

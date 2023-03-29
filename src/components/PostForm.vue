@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent>
       <h4 class="form_title">Создайте пост</h4>
-      <TextInput v-model="post.title" type="text" placeholder="Название"/>
+      <TextInput v-focus v-model="post.title" type="text" placeholder="Название"/>
       <TextInput v-model="post.content" type="text" placeholder="Описание"/>
       <DefaultBtn @click="createPost" style="align-self: flex-end;">Создать</DefaultBtn>
     </form>
@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import DefaultBtn from './ui/DefaultBtn.vue'
-
 export default {
     data() {
         return {
@@ -31,7 +29,6 @@ export default {
             };
         },
     },
-    components: { DefaultBtn }
 }
 </script>
 
